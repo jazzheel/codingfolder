@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	
+	header{
+		background-attachment: fixed;
+		background-color: white;
+		margin-right: 0;
+		margin-left: 0;
+		padding: 60px;
+		padding-bottom: 0;
+	}
+	
+	
+	#town{
+		width: 100px;
+		margin-left: 100px;
+	}
+	#geo{
+		padding-left: 150px;
+	
+}
+	#peeps{
+		padding-left: 220px;
+}
+
+	#visit{
+	padding-left: 100px;
+}
+
+	#food{
+	padding-left: 230px;
+}
+	body{
+		background-image: url("background/flags.png");
+		margin: 200px;
+		margin-top: 0;
+		background-attachment:fixed;
+		
+	}
+	#nav{font-family: 'Bebas Neue', cursive;
+		
+	}
+	ul {
+  list-style-type: none;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+	li a:hover {
+	  background-color: #111;
+}
+	
+	#sect{
+		background-color: white;
+		padding: 60px;
+		justify-content: center;
+		text-align: center;
+		
+	}
+	
+	.history{
+		padding: 50px;
+		margin: 0;
+		
+	
+	}
+	p{font-family: 'Maven Pro', sans-serif;
+	}
+	h1{
+		font-family: 'Prompt', sans-serif;
+	}
+	
+	h3{font-family: 'Prompt', sans-serif;
+		text-align: left;
+	}
+
+
+	#hero{
+		text-align: left;
+	}
+	
+#fruits{
+	width: 600px;
+	padding-left: 300px;
+	padding-top: 0;
+}
+#fruits td, #fruits th{
+	  border: 2px solid #000000;
+ 	  padding: 10px;
+}
+
+tr:hover {background-color: #D6EEEE;}
+
+#streetfoods{
+	 width: 600px;
+	 padding-left: 300px;
+	 padding-top: 0;
+}
+#streetfoods td, #streetfoods th {
+	border: 2px solid #000000;
+ 	padding: 10px;
+}
+
+#main{
+	width: 600px;
+	padding-left: 300px;
+	padding-top: 0;
+}
+#main td, #main th {
+	border: 2px solid #000000;
+ 	padding: 10px;
+}
+	
