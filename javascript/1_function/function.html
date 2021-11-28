@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function</title>
+</head>
+
+	
+	<h1>Calling a fuinction with a button.</h1>
+	<p id="mypara">Coding class makes me happy!</p>
+	
+	<div id="mydiv"><p>My favorite color is green. I like green. Yeah I dont know what to put here.</p></div>
+
+	
+	<button
+			onClick="changecontent();">change content
+	
+	</button>
+	
+	<button 
+		onClick="changestyle();">change style
+	</button>
+	<script>
+	x
+	//function change the content of the paragraph/
+		
+		function changecontent(){
+		//(){}for function
+		
+		console.log("its working!");
+		
+		
+		document.getElementById('mypara').innerHTML="put whatever";
+		
+		//put different content in the div/
+			
+		document.getElementById('mydiv').innerHTML="<h1>paragraph lets see if its working</h1><p>Is it working? Cool.</p> <img src='https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg' width='150' alt='meow'>;"
+		}//change end content/
+		
+		//new function new style/
+		
+		function changestyle(){
+			
+	//console log first/
+			
+			console.log('this is my change style');
+			
+	//create pointer
+			
+			var pointer=document.getElementById('mydiv');
+			
+			pointer.style.color="blue";
+			
+			pointer.style.backgroundColor="yellow";
+			
+		
+		
+		}
+	</script>
+<body>
+</body>
+</html>

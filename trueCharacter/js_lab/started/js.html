@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Intro to Javascript</title>
+	
+	<style>
+		#box1, #box2, #box3{
+			border: thin solid black;
+			height: 200px;
+			wdidth: 400px;
+			
+		}
+		body{
+			background-color: lightcyan;}
+	
+		
+	</style>
+	
+</head>
+
+<body>
+	
+	<h1>Leaarning Java Script</h1>
+	<!----content will be manipulated with java script---->
+	
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	
+	<!--javascript goes here before body closing tag--->
+	<script>
+	/**step1- simple variables****/
+		
+
+		
+//*  	window.alert("alert") idk what this do (T^T)
+		
+	
+		
+	var num1=23;
+	var num2=4;
+	console.log("number is"+num1);
+	
+	var score=num1+num2;
+	console.log("Your score is"+score);
+		
+//*step 2 pointer to the page/
+		
+//target a div on the page/
+	var box1 = document. getElementById('box1');
+//change html within div score/
+	
+	box1.innerHTML = score;
+		
+//* pointer fill it with content, change the style '' is important*
+		
+	var box2=document.getElementById('box2');
+		
+//*put some text*
+	
+	box2.innerHTML="its working!";
+		
+	box2.style.color="red";
+	box2.style.fontSize="24pt";
+	box2.style.background="lightyellow";
+
+//* step 3 simple logic/
+//* if is a condition/
+	
+	var box3=document.getElementById('box3');
+		
+	//a single = assigns/	
+	var name= "Jazz";
+
+//double equal sign testing to see if two things equal/
+	if(name=="Other name"){
+		box3.innerHTML="k got it!";
+	}else{
+		box3.innerHTML="wait.what happen now? what the fffu dge it's not working. oh okay got it.";
+	}
+//name== use different name from var name to make "else" work/
+// else adds to if/
+	</script>
+</body>
+</html>

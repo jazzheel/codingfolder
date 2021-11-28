@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+	
+<style>
+	body{
+		background-color: beige;
+		background-attachment: fixed;
+		background-image: url("bg.jpg");
+	
+		
+		h1{
+			font-family: 'Shrikhand', cursive;
+			font-size: 60px;
+		}
+	
+	}
+	#story{
+		background-color: white;
+		padding: 60px;
+		text-align: center;
+		margin-top: 100px;
+		margin-bottom: 0;;
+		margin-left: 200px;
+		margin-right: 200px;
+
+	}
+	
+	#output{
+		align-content: center;
+		text-align: center;
+		background-color: white;
+		padding: 60px;
+		margin-left: 200px;
+		margin-bottom: 100px;
+		margin-right: 200px;
+		font-family: 'Patrick Hand', cursive;
+		font-size: 60px;
+		}
+	
+</style>
+<title>madlib</title>
+</head>
+<body>
+<div id="story">
+	<h1>STORY TIME!</h1>
+	<form action="javascript:write();">
+
+	<label for="name">What's your name?</label>	
+	<input id="name"  name="name" type="text">
+	
+		<br><br><br>
+		
+		<label for="pron">He/She</label>
+		<select id="pron" name="pron">
+			<option value="He">He</option>
+			<option value="She">She</option>
+			
+			
+		</select>
+		
+	<br><br><br>
+		
+	
+		<label for="pet">Choose a Pet</label>
+		<select id="pet" name="pet">
+			<option value="Rex the Dinosaur">Dinosauar</option>
+			<option value="Tinker Fairy">Fairy</option>
+			<option value="Coco the Crocodile">Crocodile</option>
+			<option value="Gary the Snail">Snail</option>
+			<option value="Roby the Frog">Frog</option>
+		
+		</select>
+	
+	<br><br><br>
+	
+	
+		<label for="anim">Choose an Animal</label>
+			<input type="radio" name="anim" value="penguin">Penguin
+			<input type="radio" name="anim" value="owl">Owl
+			<input type="radio" name="anim" value="dog">Dog
+			<input type="radio" name="anim" value="cat">Cat
+	
+		
+	<br><br><br>
+		<input type="submit" value="Create Story">
+
+	
+		
+			  
+	</form>
+	</div>
+</body>
+	<div id="output"></div>
+	
+		
+<script> 
+	function write(){
+		console.log("It's working");
+	
+		
+		var name =document.getElementById ('name').value;
+		var pron =document.getElementById ('pron').value;
+		var anim =
+		 document.querySelector('input[name="anim"]:checked').value;
+			
+			var aselect;
+			if(anim=="Penguin"){
+				aselect="penguin";}
+			else if(anim=="owl"){
+				aselect="owl";}
+			else if(anim=="Dog"){
+				aselect="dog";}
+			else if(anim=="Cat"){
+				aselect="cat";}
+			
+		
+	
+		
+			var pet = document.getElementById ('pet').value;
+				
+			
+		
+			document.getElementById('output').innerHTML="One foggy night, the moon was shining so brightly. Then, there was a big white " +anim;
+		
+			document.getElementById('output').innerHTML+=" sitting on a huge tree. Suddenly, someone rushed into the bushes, and it was "+name;
+		
+			document.getElementById('output').innerHTML+= "! " +pron;
+		
+			document.getElementById('output').innerHTML+= " was looking for " +pet;
+		
+		 	document.getElementById('output').innerHTML+= ". The " +anim;
+			
+			document.getElementById('output').innerHTML+= " on a tree suddenly talked! " +name;
+			
+			document.getElementById('output').innerHTML+= " was startled.<br><br> “I know where your pet is.” said the " +anim;
+		
+			document.getElementById('output').innerHTML+= ". " +name;
+		
+			document.getElementById('output').innerHTML+=" followed the " +anim;
+		
+			document.getElementById('output').innerHTML+=" , but was deceived! The " +anim;
+		
+			document.getElementById('output').innerHTML+=" suddenly became a vampire. Luckily, " +pet;
+		
+			document.getElementById('output').innerHTML+= " saved " +name;
+		
+			document.getElementById('output').innerHTML+= " from the evil  " +anim;
+			
+		document.getElementById('output').innerHTML+= "."
+			document.getElementById('output').innerHTML+= "<h3> The End </h3>"
+		
+	}
+
+</script>	
+	
+</html>

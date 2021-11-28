@@ -1,2 +1,0 @@
-# codingfolder
-scripting project files
