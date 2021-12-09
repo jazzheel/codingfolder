@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math Objects</title>
+	
+	
+	
+</head>
+
+<body>
+	<h1>Math Object</h1>
+	
+	<p> Click button to learn more</p>
+	<!--div for coding feedback-->
+	<div id="output"></div>
+	
+	<button id="btn1">Click Me</button>
+	
+<script>
+	//parameter: which event are you listening for, function call//
+	document.getElementById('btn1').addEventListener('click', mathStuff);
+	
+	function mathStuff(){
+		console.log('Yay It works');
+		
+	var output=document.getElementById('output');
+	//pre built method//
+	output.innerHTML="PI  is: "+Math.PI;
+	//square//	
+	output.innerHTML+="<br>The square root of 16 "+Math.sqrt(16);
+		
+	output.innerHTML+="<br>Rounding up 4.53 results in"+Math.ceil(4.53);
+		
+		
+	//round down a number//
+		
+	output.innerHTML+="<br>Rounding down 6.84 results in:"+Math.floor(6.84);
+		
+	//random number//
+	output.innerHTML+="<br>Create random number 0 and 1"+Math.random();
+		
+	output.innerHTML+="<br>Create random number 0 and 1"+Math.ceil(Math.random()*10);
+		
+	
+	
+	}
+</script>
+</body>
+</html>

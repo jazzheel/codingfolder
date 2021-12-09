@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Positioning</title>
+<style>
+	#parent{
+		background-color: aquamarine;
+		width: 960px;
+		height: 600px;
+		margin: auto;
+		
+	}
+	
+	.child{
+		height: 50px;
+		width: 50px;
+		position: relative;
+	}
+	
+	#uno{
+		background-color: aliceblue;
+		left: 200px;
+		top: 100px;
+	
+	}
+	
+	#dos{
+		background-color: blueviolet;
+		left: 300px;
+		top: 200px;
+	}
+	
+	#tres{
+		background-color: brown;
+		left: 400px;
+		top: 300px;
+	}
+</style>	
+	
+</head>
+
+<body>
+	<h1>Relative Positioning</h1>
+
+<!--parent div-->
+	<div id="parent">
+		<div id="uno" class="child">1</div>
+		<div id="dos" class="child">2</div>
+		<div id="tres" class="child">3</div>
+<!--children-->
+		
+	</div>	
+</body>
+</html>

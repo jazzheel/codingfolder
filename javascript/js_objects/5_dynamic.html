@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	
+<style>
+	#box1{
+		width: 200px;
+		height: 200px;
+		background-color: aquamarine;
+		position: relative;
+		margin-bottom: 30px;
+	}
+	
+	
+</style>
+<title>Dynamic Interval</title>
+</head>
+
+<body>
+	<div id="box1"></div>
+
+	<button id="pushBtn">DON'T PUSH THIS BUTTON</button>
+
+	<button id="stopBtn">DO NOT PUSH</button>
+	
+</body>
+	
+<script>
+	var box1 = document.getElementById('box1');
+	//event listener for moving button
+	//have a var to hold position
+	//	var num = 0;
+	// var #samevarname#;
+	
+	var position = 0;
+	var num = 0;
+	var position = 0;
+	var pushInt;
+	
+	
+	
+	
+	document.getElementById('pushBtn').addEventListener('click', move);
+	
+	document.getElementById('stopBtn').addEventListener('click',stop);
+	
+	function move (){
+		console.log('checking..');
+		
+		pushInt = setInterval(animate, 50);
+	//var pushInt = setInterval(animate, #);	
+	}
+	
+	function animate (){
+		console.log('double checking...');
+		
+		//add to variable position, move div
+		//position+=#;
+		
+		//	box1.style.left=position+"px";
+		
+		position+=5;
+		box1.style.left=position+"px";
+		box1.style.backgroundColor="red";
+		
+	}
+	function stop(){
+		console.log('checking..');
+		
+		clearInterval(pushInt);
+		//clearInterval(#samevarname#);	
+		
+		box1.style.backgroundColor="aquamarine";
+	}
+
+</script>
+</html>

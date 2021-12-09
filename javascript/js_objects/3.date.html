@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date Object</title>
+	
+</head>
+
+<body>
+	
+	<h1>Date Object</h1>
+	
+	<p> Click button to learn more</p>
+	<!--div for coding feedback-->
+	<div id="output"></div>
+	
+	<button id="btn1">Click Me</button>
+</body>
+	
+<script>
+	//parameter: which event are you listening for, function call//
+	document.getElementById('btn1').addEventListener('click', dateStuff);
+	
+	function dateStuff (){
+		
+		console.log('itworks');
+		
+		var output=document.getElementById('output');
+		
+		var d= new Date();
+		
+		output.innerHTML="Day of the Month "+d.getDate();
+		
+		output.innerHTML+="<br>What year is it?" +d.getFullYear();
+		
+		output.innerHTML+="<br> Hour" +d.getHours();
+		
+		//24-hour clock to 12-hour: For hours, if the hours are greater than 12 then minus 12 from it. If the hours are 0 then change it to 12.
+		
+		
+		output.innerHTML+="<br>Minutes" +d.getMinutes();
+		
+		output.innerHTML+="<br>Seconds" +d.getSeconds();
+		
+		var months =["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec",];
+		output.innerHTML+="<br>Month" +months[d.getMonth()];
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+</script>
+</html>

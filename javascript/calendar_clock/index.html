@@ -1,0 +1,415 @@
+<!doctype html>
+<html><head>
+<meta charset="UTF-8">
+	
+	<!--cursive-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+	
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+	
+	body{
+		background-image: url("210.jpg");
+		background-attachment: fixed
+	}
+	
+	h1{
+		margin-top: 60px;
+		text-align: center;
+		font-family: 'Pacifico', cursive;
+		font-size: 30px;
+		color: royalblue;
+	}
+	
+
+	
+	.content{
+		padding-left: 50px;
+		text-align-last: center;
+	}
+	
+	#output{
+		font-size: 40px;
+	}
+	
+	
+	#box{
+		background-image:url("blue-01.png");
+		border-style: solid;
+		border-color: #C8D6E3;
+		border-width: 5px;
+		border-radius: 50px;
+		margin-top: 100px;
+		margin-left: 100px;
+		width: 1200px;
+		height: 1200px;
+		text-align: center;
+	}
+	
+	
+	
+	
+	
+	
+	#date{
+		text-align: center;
+		font-family: 'Indie Flower', cursive;
+		color: royalblue;
+		background-color: white;
+		border-style: solid;
+		border-color: white;
+		border-radius: 100%;
+		padding-top: 0;
+		padding-bottom: 40px;
+		margin-left: 500px;
+		margin-right: 250px;
+		margin-top: 60px;
+	
+	}
+	
+	canvas{
+		padding-bottom: 80px;
+		padding-left: 60px;
+		
+	}
+	
+	
+	.x{
+		font-size: 40px;
+		font-family: 'Pacifico', cursive;
+		color: royalblue;
+		margin:0;
+		
+	}
+	
+	#xstyle{
+		width:500px;
+		margin: auto;
+		margin-top: 0;
+		background-color: ghostwhite;
+		border-radius: 10%;
+	}
+	#xmas{
+		margin-top: 60px;
+	}
+	
+	
+	
+	#aud{
+		margin-top: 50px;
+	}
+	
+	#hour{
+		
+	left: 10px;
+	top: 10px;
+
+	
+	}
+	
+	#mins{
+		
+		left: 10px;
+		top: 10px;
+		
+	
+	}
+	
+	#secs{
+		left: 10px;
+		top: 10px;
+	
+	}
+	
+	.child{
+		color: royalblue;
+		font-family: 'Indie Flower', cursive;
+		position: relative;
+		display: inline-block;
+		font-size: 30px;
+	}
+	
+	#time{
+		width: 200px;
+		height: 80px;
+		margin-left: 650px;
+		margin-right:-800px;
+		margin-bottom: 1000px;
+		margin-top: -950px;
+		background-color:white;
+		text-align: center;
+		border-radius: 50%;
+	}
+	
+	footer{
+		margin-top: 1000px;
+		
+	}
+	
+</style>
+<title>Calendar Clock</title>
+	
+	
+</head>
+
+<body>
+	
+	
+	<div id="box">
+					<div id="date">
+						<div id="output"></div>
+					</div>
+
+				<img id="girl" alt="xmasgirl" src="mxmas-01.png">
+			
+<!--wall clock--->	
+				<canvas id="canvas" width="200" height="200"></canvas>
+				<div id="clock">
+				</div>
+			
+		
+			
+<!--countrdown-->	<div id="xstyle">	
+					<div id="xmas" class="x"></div>
+					<p id="xmastxt" class="x">Christmas Countdown</p>
+					</div>	
+				
+			
+	<div id="aud">
+			 <audio controls>
+ 			 <source src="freesound.org_xmas.mp3" type="mp3">
+ 			 <source src="freesound.org_xmas.mp3" type="audio/mp3">
+				</audio>
+				</div>
+				
+	</div>
+	
+	<div id="time">
+		<div id="hour" class="child"></div>
+		<div id="mins" class="child"></div>
+		<div id="secs" class="child"></div>
+		<div id="mid" class="child"></div>
+	</div>
+	
+
+			
+		
+			
+	
+<script>
+	//current date
+
+		var d = new Date();
+		
+		var days =["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday",];
+			output.innerHTML+="<br>" +days[d.getDay()];
+		
+		var months =["January","Febuary","March","April","May","June","July","August","September","October","November","December",];
+	
+			output.innerHTML+="<br>" +months[d.getMonth()];
+			output.innerHTML+=" "+d.getDate();
+			output.innerHTML+=", " +d.getFullYear();
+	
+	
+	
+		//previous time code
+	
+			//	setInterval(myTimer, 1000);
+			//	function myTimer() {
+			//	const d = new Date();
+			//document.getElementById("time").innerHTML=d.toLocaleTimeString();}	
+
+	
+	function timer(){
+	const d = new Date();
+		let hour = d.getHours();
+		if(hour>12){hour=hour-12}
+		document.getElementById("hour").innerHTML = hour+":";
+	
+		let minutes = d.getMinutes();
+		
+		if(minutes<10){minutes="0"+minutes}
+		document.getElementById("mins").innerHTML = minutes+":";
+		
+		let seconds = d.getSeconds();
+		document.getElementById("secs").innerHTML = seconds+"PM";
+		if(hour+=12){
+			seconds = seconds+"AM"};
+			
+		
+		}
+		
+		
+			timer();
+		//() are paremeters
+	
+		//setInterval(timer,1000);
+		var myInt=setInterval(timer,1000);
+		
+	
+	
+	
+//------------------wallclock&snowfall---------------------------------//
+
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+		var radius = canvas.height / 2;
+		ctx.translate(radius, radius);
+		radius = radius * 0.90
+		setInterval(drawClock, 1000);
+
+		function drawClock() {
+		drawFace(ctx, radius);
+  		drawNumbers(ctx, radius);
+		drawTime(ctx, radius);
+			}
+
+		function drawFace(ctx, radius) {
+			var grad;
+			ctx.beginPath();
+			ctx.arc(0, 0, radius, 0, 2*Math.PI);
+			ctx.fillStyle = 'white';
+			ctx.fill();
+			grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+			grad.addColorStop(0.5, 'white');
+  			grad.addColorStop(0, '#2695CC');
+			grad.addColorStop(0, 'white');
+			ctx.strokeStyle = grad;
+  			ctx.lineWidth = radius*0.1;
+  			ctx.stroke();
+  			ctx.beginPath();
+  			ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  			ctx.fillStyle = 'black';
+  			ctx.fill();
+				}
+
+	function drawNumbers(ctx, radius) {
+  			var ang;
+  			var num;
+			ctx.font = radius*0.15 + "px arial";
+  			ctx.textBaseline="middle";
+  			ctx.textAlign="center";
+  			for(num = 1; num < 13; num++){
+			ang = num * Math.PI / 6;
+    		ctx.rotate(ang);
+			ctx.translate(0, -radius*0.85);
+			ctx.rotate(-ang);
+			ctx.fillText(num.toString(), 0, 0);
+			ctx.rotate(ang);
+			ctx.translate(0, radius*0.85);
+			ctx.rotate(-ang);
+					}
+		}
+
+	function drawTime(ctx, radius){
+		var now = new Date();
+    	var hour = now.getHours();
+    	var minute = now.getMinutes();
+    	var second = now.getSeconds();
+		//hour
+		hour=hour%12;
+		hour=(hour*Math.PI/6)+
+			(minute*Math.PI/(6*60))+
+			(second*Math.PI/(360*60));
+		drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+		minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+		drawHand(ctx, minute, radius*0.8, radius*0.07);
+	// second
+		second=(second*Math.PI/30);
+		drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+	function drawHand(ctx, pos, length, width) {
+		ctx.beginPath();
+		ctx.lineWidth = width;
+		ctx.lineCap = "round";
+		ctx.moveTo(0,0);
+		ctx.rotate(pos);
+		ctx.lineTo(0, -length);
+		ctx.stroke();
+		ctx.rotate(-pos);
+}
+		
+		
+	
+
+	
+//xmas countdown
+//update every christmas ends		
+	var countDownDate = new Date("Dec 25, 2021 24:00:00").getTime();
+
+// Update the count down every 1 second
+	var x = setInterval(function() {
+
+  // Get today's date and time
+		var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+		var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+		document.getElementById("xmas").innerHTML = days + "d " + hours + "h "
+  		+ minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("xmas").innerHTML = "Merry Christmas!";
+  }
+}, 1000);
+	
+		
+	///snow
+		
+var snow_fall_rate = 5 //decrease for faster fall speed
+	function snow() {  
+		var b = document.createElement('div')
+  	var size = (Math.random()*10) + 5
+	b.className = 'flake'
+	b.style.width = size + 'px'
+	b.style.height = size + 'px'
+	b.style.position = 'fixed'
+	b.style.zIndex = '9999'
+  	b.style.left = Math.random()*window.innerWidth + 'px'
+  	b.style.top = '-20px'
+  	b.style.borderRadius = '50%'
+  	b.style.background = 'white' 
+  	b.style.opacity = '.5' 
+  	b.style.filter = Math.random() < .5 ? 'blur(3px)' : 'blur(1px)'
+	b.style.transition = Math.random < .5 ? snow_fall_rate*.75 + 's' : snow_fall_rate + 's'
+  b.style.transitionTimingFunction = 'ease-in'
+  document.body.appendChild(b)
+ 
+  setTimeout(function(){
+    var flakes = document.querySelectorAll('.flake')
+    var flake = flakes[flakes.length - 1]  
+    var flake_loc = flake.getBoundingClientRect()
+    flake.style.top = '105%'
+    flake.style.left = Math.random() < .5 ? flake_loc.left - 150 + 'px' : flake_loc.left + 150 + 'px'
+  },10)  
+ 
+  var flakes = document.getElementsByClassName('flake')
+  for(var i=0;i<flakes.length;i++){
+    if(flakes[i].getBoundingClientRect().top > window.innerHeight) {
+      flakes[i].remove()
+    }      
+  }
+  setTimeout(function(){ snow() },200)
+}
+snow()
+
+	</script>
+	</body>
+	<footer>
+		<a href="https://www.freepik.com/free-vector/unfocused-winter-landscape-with-snowflakes_6029361.htm#page=1&query=christmas%20background&position=2&from_view=search">Background Designed by s.salvador / Freepik</a><br>
+		<a href="https://freesound.org/people/DDmyzik/sounds/455609/">Music by: DDmyzik/ Freesound</a>
+	</footer>
+</html>

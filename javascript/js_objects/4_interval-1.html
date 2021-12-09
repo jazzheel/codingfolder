@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interval</title>
+</head>
+
+<body>
+	<h1>Timer</h1>
+	<div id="output"></div>
+	
+	<button id="stopBtn">STOP</button>
+</body>
+	
+	
+	
+<script>
+		var num=0;
+	
+		var output=document.getElementById('output');
+	
+		function timer(){
+			
+			num++;
+			
+			output.innerHTML=num;
+		}
+		//put after function
+		timer();
+		//() are paremeters
+	
+		//setInterval(timer,1000);
+		var myInt=setInterval(timer,1000);
+		document.getElementById( 'stopBtn' ).addEventListener( 'click' ,stopTimer);
+	
+		function stopTimer(){
+			console.log('stopworking');
+			clearInterval(myInt);
+		}
+	
+	
+</script>
+</html>

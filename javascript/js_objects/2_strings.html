@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>strings</title>
+</head>
+
+<body>
+	
+	<h1>String Object</h1>
+	
+	<p> Click button to learn more</p>
+	<!--div for coding feedback-->
+	<div id="output"></div>
+	
+	<button id="btn1">Click Me</button>
+	
+</body>
+<script>
+		document.getElementById('btn1').addEventListener('click', StringStuff);
+	
+		function StringStuff(){
+			console.log('itworks');
+		
+		var output=document.getElementById('output');
+			
+		var myWord="Constinapole";
+			
+		var mySentence= "Another fun thing to say Peter Piper.";
+		
+		output.innerHTML="Today is not my birthday. True or False? "+myWord.startsWith('C');
+
+		output.innerHTML="<br>Jazz will not graduate in 2023. True or False? "+mySentence.startsWith ( 'False');
+		
+		output.innerHTML+="<br>Change myword to uppercase: " +myWord.toUpperCase();
+			
+		}
+	
+</script>
+</html>
